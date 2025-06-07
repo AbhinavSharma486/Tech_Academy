@@ -1,6 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  
     "./index.html",
     "./src//*.{js,ts,jsx,tsx}",
   ],
@@ -18,6 +19,8 @@ export default {
           transform: 'translate(20px, -10px) scale(1.05)',
         },
       },
+    },
+    extend: {
     },
   },
 },
