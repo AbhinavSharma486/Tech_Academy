@@ -2,7 +2,11 @@
 export default {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+       screens: {
+        'tablet-below': { 'max': '768px' }, // applies to 768px and below
+      },
+    },
   },
   plugins: [],
 }
