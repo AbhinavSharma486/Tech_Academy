@@ -1,4 +1,4 @@
-import { Check} from "lucide-react";
+import { Check, Eye, EyeClosed, EyeOff} from "lucide-react";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -6,7 +6,7 @@ function Register({ isVisible }) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const [showpassword, setShowPassword] = useState(false);
   const isEmailValid = (email) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
   const isPasswordValid = (password) => password.length >= 5;
@@ -40,7 +40,7 @@ function Register({ isVisible }) {
         className="w-full flex flex-col items-center"
         onSubmit={handleSubmit}
       >
-        <h1 className="md:text-3xl  text-2xl font-bold">Create Account</h1>
+        <h1 className="md:text-3xl  text-2xl font-bold pb-3">Create Account</h1>
         <div className="relative w-full">
           <input
           type="text"
@@ -67,14 +67,22 @@ function Register({ isVisible }) {
        </div>
         <div className="relative w-full "> 
           <input
-          type="password"
+          type={showpassword ? "text" : "password"}
           placeholder="Password"
           className="bg-[#eee] my-2 p-2 pl-3 rounded-full w-full"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        {isPasswordValid(password) && (
-            <Check className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white size-6 bg-green-500 rounded-full p-1" />
+       {showpassword ? (
+            <div
+              className="absolute top-4 right-2"
+              onClick={() => setShowPassword(false)}
+            >
+              <Eye />
+            </div>
+          ) : (
+            <div
+              className="absolute top-4 right-2" onClick={() => setShowPassword(true)}><EyeOff /></div>
           )}
         </div>
         <button

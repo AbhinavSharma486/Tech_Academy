@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { Check } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 
 function Login({ isVisible }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showpassword, setShowPassword] = useState(false);
 
   const isEmailValid = (email) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
@@ -43,18 +44,31 @@ function Login({ isVisible }) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          
         </div>
 
         <div className="relative w-full my-2">
           <input
-            type="password"
+            type={showpassword ? "text" : "password"}
             placeholder="Password"
             className="bg-[#eee] p-2 pl-3 pr-10 rounded-full w-full"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-         
+          {showpassword ? (
+            <div
+              className="absolute top-2 right-2"
+              onClick={() => setShowPassword(false)}
+            >
+              <Eye />
+            </div>
+          ) : (
+            <div
+              className="absolute top-2 right-2"
+              onClick={() => setShowPassword(true)}
+            >
+              <EyeOff />
+            </div>
+          )}
         </div>
 
         <button className="bg-blue-500 text-white px-6 py-2 rounded-full mt-4 w-full cursor-pointer hover:bg-blue-700">

@@ -90,7 +90,7 @@ function Wrapper({ children }) {
               <h1 className="text-3xl hidden md:block font-bold w-full  ">
                 Welcome Back!
               </h1>
-              <p className="text-[20px] leading-[25px] hidden md:block tracking-[0.5px] mt-[20px] mb-[20px] w-[200px] text-center">
+              <p className="text-[20px] leading-[25px] hidden md:block tracking-[0.5px] mt-[20px] mb-[20px] w-[250px] text-center">
                 Sign in to personalize your experience!
               </p>
               <button
