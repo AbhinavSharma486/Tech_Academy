@@ -1,9 +1,14 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import AuthWrapper from "./components/LoginRegisterPage/AuthWrapper";
 import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
-import React from "react";
+
+import AuthWrapper from "./components/LoginRegisterPage/AuthWrapper";
+import Footer from './components/Footer';
+import LandingPage from "./pages/LandingPage";
+import ContactUsPage from "./pages/ContactUsPage";
 import Home from "./pages/Home/Home";
+
 
 function App() {
   const [toastPosition, setToastPosition] = useState("top-right");
@@ -53,24 +58,19 @@ function App() {
     window.addEventListener("resize", updateToastSettings);
     return () => window.removeEventListener("resize", updateToastSettings);
   }, []);
-
   return (
     <>
-      <Toaster
-        position={toastPosition}
-        containerStyle={containerStyle}
-        toastOptions={{
-          style: toastStyle,
-        }}
-      />
-      <Routes>
-
-        <Route path='/' element={<Home />} />
-          
-        {/* Auhentication Route */}
-        <Route path="/login" element={<AuthWrapper />} />
-        <Route path="/register" element={<AuthWrapper />} />
-      </Routes>
+      <div>
+        <main>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/login" element={<AuthWrapper />} />
+            <Route path="/register" element={<AuthWrapper />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }
