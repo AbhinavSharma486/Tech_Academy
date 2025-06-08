@@ -3,6 +3,7 @@ import AuthWrapper from "./components/LoginRegisterPage/AuthWrapper";
 import { Toaster } from "react-hot-toast";
 import { useEffect, useState } from "react";
 import React from "react";
+import Home from "./pages/Home/Home";
 
 function App() {
   const [toastPosition, setToastPosition] = useState("top-right");
@@ -63,6 +64,10 @@ function App() {
         }}
       />
       <Routes>
+
+        <Route path='/' element={<Home />} />
+          
+        {/* Auhentication Route */}
         <Route path="/login" element={<AuthWrapper />} />
         <Route path="/register" element={<AuthWrapper />} />
       </Routes>
