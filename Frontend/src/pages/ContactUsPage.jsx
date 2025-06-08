@@ -1,8 +1,8 @@
 import React from "react";
-import ContactForm from "../components/contact/ContactForm";
-import ContactInfo from "../components/contact/ContactInfo";
-import SocialMedia from "../components/contact/SocialMedia";
-import MapSection from "../components/contact/MapSection";
+import ContactForm from "../components/ContactUs/ContactForm";
+import ContactInfo from "../components/ContactUs/ContactInfo";
+import SocialMedia from "../components/ContactUs/SocialMedia";
+import MapSection from "../components/ContactUs/MapSection";
 
 const Contact = () => {
   return (
