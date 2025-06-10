@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useEffect } from "react";
 import { DirectNavigate, HoveredLink, Menu, MenuItem, ProductItem } from "./ui/NavMenu/NavMenu";
 import { cn } from "../lib/utils";
@@ -28,7 +27,7 @@ function Navbar({ className }) {
   }, []);
 
   return (
-    
+
     <div className={cn(
       "fixed top-10 left-4 right-4 md:left-20 md:right-20 max-w-5xl mx-auto z-50",
       className
@@ -106,7 +105,7 @@ function Navbar({ className }) {
         }
 
         <DirectNavigate route={'/'} RouteName={'Review'} />
-        <DirectNavigate route={'/'} RouteName={'Contact'} />
+        <DirectNavigate route={'/contact-us'} RouteName={'Contact'} />
 
       </Menu>
     </div>
