@@ -7,7 +7,7 @@ import AuthWrapper from "./components/LoginRegisterPage/AuthWrapper";
 import Footer from './components/Footer';
 import LandingPage from "./pages/LandingPage";
 import ContactUsPage from "./pages/ContactUsPage";
-import Home from "./pages/Home/Home";
+import Navbar from "./components/Navbar";
 
 
 function App() {
@@ -61,6 +61,7 @@ function App() {
   return (
     <>
       <div>
+        <Navbar />
         <main>
           <Routes>
             <Route path="/" element={<LandingPage />} />
