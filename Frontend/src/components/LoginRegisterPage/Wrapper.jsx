@@ -34,7 +34,7 @@ function Wrapper({ children }) {
       </div>
 
       <div className="bg-white rounded-[30px] m-10 shadow-[0_5px_15px_rgba(0,0,0,0.35)] relative overflow-hidden min-w-[280px] w-[60%] md:min-w-[730px] md:w-[50%] max-w-[100%] min-h-[480px] md:min-h-[580px] flex flex-col md:flex-row">
-        <div className="absolute inset-0 z-50 pointer-events-none overflow-hidden hidden md:block">
+        <div className="relative inset-0 z-50 pointer-events-none overflow-hidden hidden md:block">
           <svg
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
