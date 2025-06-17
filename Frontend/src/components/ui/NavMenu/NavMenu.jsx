@@ -27,8 +27,14 @@ export const MenuItem = ({
 
   return (
     <div
-      onMouseEnter={() => setActive(item)}
-      onMouseLeave={() => setActive(null)}
+      onMouseEnter={() => {
+        clearTimeout(window.leaveTimeout);
+        setActive(item); 
+      }}
+      onMouseLeave={() => {
+        window.leaveTimeout = setTimeout(() => setActive(null), 300); // hide after 0.3s
+      }}
+
       className="relative flex items-center gap-1 cursor-pointer"
     >
       <motion.p
