@@ -5,11 +5,8 @@ import Logo from '../assets/Logo/Logo';
 
 export default function NavbarDemo() {
   return (
-    <div className="relative w-full flex items-center justify-center mb-15">
+    <div className="relative w-full flex items-center justify-center">
       <Navbar className="top-2" />
-      <p className="text-black dark:text-white">
-        The Navbar will show on top of the page
-      </p>
     </div>
   );
 }
@@ -104,7 +101,7 @@ function Navbar({ className }) {
           )
         }
 
-        <DirectNavigate route={'/'} RouteName={'Review'} />
+        {/* <DirectNavigate route={'/'} RouteName={'Review'} /> */}
         <DirectNavigate route={'/contact-us'} RouteName={'Contact'} />
 
       </Menu>

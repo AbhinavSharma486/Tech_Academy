@@ -23,7 +23,7 @@ const HeroCard = ({ src, title, des }) => {
           </div>
 
           {/* Bottom: View Courses Link */}
-          <div className="w-fit">
+          <div className="w-fit my-5">
             <Link to={src}>
               <span className="flex items-center justify-between text-[3vw] sm:text-[2vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1vw] px-4 py-2 rounded-2xl bg-white font-medium hover:bg-gray-200 transition">
                 View Courses&nbsp;
@@ -40,7 +40,7 @@ const HeroCard = ({ src, title, des }) => {
           <img
             src={image}
             alt="mentor"
-            className="h-[20vh] sm:h-[22vh] md:h-[30vh] xl:h-[26vh] w-auto object-cover transition-transform duration-500 transform group-hover:scale-130"
+            className="h-[20vh] sm:h-[25vh] md:h-[30vh] xl:h-[26vh] w-auto object-cover transition-transform duration-500 transform group-hover:scale-130"
           />
         </div>
 
@@ -50,37 +50,5 @@ const HeroCard = ({ src, title, des }) => {
 
   );
 };
-
-//   return (
-//     <div>
-//       <CardContainer className="inter-var">
-//         <CardBody
-//           className="bg-white relative group/card dark:hover:shadow-3xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[28rem] h-auto rounded-xl p-3 border"
-//         >
-//           <CardItem translateZ="50" className="text-lg font-semibold text-blue-700">
-//             {title}
-//           </CardItem>
-//           <CardItem
-//             as="p"
-//             translateZ="60"
-//             className="text-gray-500 text-sm max-w-sm mt-1"
-//           >
-//             {des}
-//           </CardItem>
-
-//           <CardItem translateZ="100" className="w-full mt-3">
-//             <img
-//               src={src}
-//               height="480"
-//               width="480"
-//               className="h-48 w-full object-cover rounded-xl group-hover/card:shadow-lg"
-//               alt="thumbnail"
-//             />
-//           </CardItem>
-//         </CardBody>
-//       </CardContainer>
-//     </div>
-//   );
-// };
 
 export default HeroCard;

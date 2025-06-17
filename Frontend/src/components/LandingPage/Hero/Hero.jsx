@@ -33,7 +33,7 @@ export function Hero() {
                   <span className="bg-gradient-to-r from-blue-700 to-blue-400 bg-clip-text text-transparent">
                     Empower&nbsp;
                   </span>
-                  Your <span className="block md:inline">Future with</span>
+                  Your <span className="block md:inline">Future with&nbsp;</span>
 
                   <span className="bg-gradient-to-r from-blue-700 to-blue-400 bg-clip-text text-transparent">
                     Knowledge
@@ -62,7 +62,7 @@ export function Hero() {
                       transition-all duration-300 ease-in-out 
                       group-hover:shadow-xl group-hover:scale-105 group-hover:opacity-95 
                       hover:bg-gradient-to-r hover:from-black hover:via-blue-500 hover:to-blue-700">
-                    <span className="flex p-2 items-center justify-between gap-[3vw] w-full">
+                    <span className="flex p-1 items-center justify-between gap-[3vw] w-full">
                       <span className="text-[5vw] sm:text-[3vw] md:text-[2.5vw] lg:text-[2vw] xl:text-[1.5vw]">
                         Register now
                       </span>

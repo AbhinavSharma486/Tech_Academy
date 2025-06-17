@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { motion } from "motion/react";
+import { AnimatePresence, easeOut, motion } from "motion/react";
 import Logo from "../../../assets/Logo/Logo";
 import { Link } from "react-router-dom";
 import { HiMenu, HiX } from 'react-icons/hi';
@@ -69,62 +69,64 @@ export const Menu = ({ setActive, children }) => {
 
   return (
 
-    <motion.section
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      viewport={{ once: true }}
-      className=""
-    >
-
-
-      <nav className={`md:mx-auto relative rounded-[3rem] lg:rounded-full border border-gray-300 shadow-xl shadow-gray-500 px-4 py-2 md:px-8 md:py-5
-      ${isMobileMenuOpen ? "backdrop-blur-lg bg-blue-200/35" : "bg-white"}
+    <nav className={`md:mx-auto z-30 rounded-[3rem] lg:rounded-full border border-gray-300 shadow-xl shadow-gray-500 px-5 py-2 md:px-4 md:py-3
+      ${isMobileMenuOpen ? "bg-white" : "bg-white"}
     `}>
-        <div className="flex flex-wrap md:flex-nowrap items-center justify-between w-full gap-5">
-          {/* Logo Placeholder */}
-          <div className="flex items-start justify-start">
-            <div className="text-xl font-bold">
-              <Logo />
-            </div>
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center justify-center gap-6">
-            {children}
-          </div>
-
-          {/* Start Button + Hamburger */}
-          <div className="flex items-center gap-4">
-            <div className="hidden lg:block">
-              <Link to="/">
-                <div className="group inline-block transition-all duration-300">
-                  <button className="text-white font-bold text-xl px-5 py-3 rounded-full bg-gradient-to-r from-blue-500 via-blue-700 to-black 
-      transition-all duration-300 ease-in-out 
-      group-hover:shadow-xl group-hover:scale-105 group-hover:opacity-95 
-      hover:bg-gradient-to-r hover:from-black hover:via-blue-500 hover:to-blue-700">
-                    Start Now
-                  </button>
-                </div>
-              </Link>
-            </div>
-
-            {/* Mobile Icon */}
-            <div className="block  lg:hidden">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-black flex items-center justify-center focus:outline-none"
-                aria-label="Toggle menu"
-              >
-                {isMobileMenuOpen ? <HiX size={35} /> : <HiMenu size={35} />}
-              </button>
-            </div>
+      <div className="flex flex-wrap md:flex-nowrap items-center justify-between w-full gap-5">
+        {/* Logo Placeholder */}
+        <div className="flex items-start justify-start">
+          <div className="text-xl font-bold">
+            <Logo />
           </div>
         </div>
 
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center justify-center gap-6">
+          {children}
+        </div>
+
+        {/* Start Button + Hamburger */}
+        <div className="flex items-center gap-4">
+          <div className="hidden lg:block">
+            <Link to="/">
+              <div className="group inline-block transition-all duration-300">
+                <button className="text-white font-bold text-xl px-5 py-3 rounded-full bg-gradient-to-r from-blue-500 via-blue-700 to-black 
+      transition-all duration-300 ease-in-out 
+      group-hover:shadow-xl group-hover:opacity-95 
+      hover:bg-gradient-to-r hover:from-black hover:via-blue-500 hover:to-blue-700">
+                  Start Now
+                </button>
+              </div>
+            </Link>
+          </div>
+
+          {/* Mobile Icon */}
+          <div className="block  lg:hidden">
+
+            <motion.button
+              whileTap={{ y: 0.1 }}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-black flex items-center justify-center focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <HiX size={35} /> : <HiMenu size={35} />}
+            </motion.button>
+          </div>
+        </div>
+      </div>
+
+      <AnimatePresence initial={false}>
+
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="flex flex-col lg:hidden mt-5 gap-4 px-2">
+          <motion.div
+            initial={{ opacity: 0, scale: 0, y: -5 }}
+            animate={{ opacity: 1, scale: 1, y: 5 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            exit={{ opacity: 0, scale: 0, y: 0 }}
+            className="absolute top-full right-10 left-10 z-40 mt-2 backdrop-blur-lg bg-blue-200/35 rounded-xl shadow-xl p-4 flex flex-col gap-4 lg:hidden transition-all duration-700 ease-in-out"
+          >
+
             {React.Children.map(children, (child, index) => {
               // If child has a submenu prop (array of links), show a toggle button for dropdown
               if (child?.props?.submenu) {
@@ -139,19 +141,29 @@ export const Menu = ({ setActive, children }) => {
                       {child.props.label || child.props.item || "Menu"}
                       <span className="text-2xl" >{isOpen ? <FiChevronDown /> : <FiChevronUp />}</span>
                     </button>
-                    {isOpen && (
-                      <div className="pl-6 mt-2 flex flex-col gap-2">
-                        {child.props.submenu.map((item, idx) => (
-                          <Link
-                            key={idx}
-                            to={item.href}
-                            className="text-xl text-black hover:underline hover:text-blue-500"
-                          >
-                            {item.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          key="dropdown"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="pl-6 mt-2 flex flex-col gap-2 overflow-hidden"
+                        >
+                          {child.props.submenu.map((item, idx) => (
+                            <Link
+                              key={idx}
+                              to={item.href}
+                              className="text-xl text-black hover:underline hover:text-blue-500"
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
                   </div>
                 );
               }
@@ -165,21 +177,20 @@ export const Menu = ({ setActive, children }) => {
               <Link to="/">
                 <div className="group inline-block transition-all duration-300">
                   <button className="text-white font-bold text-xl px-5 py-3 rounded-full bg-gradient-to-r from-blue-500 via-blue-700 to-black 
-      transition-all duration-300 ease-in-out 
-      group-hover:shadow-xl group-hover:scale-105 group-hover:opacity-95 
-      hover:bg-gradient-to-r hover:from-black hover:via-blue-500 hover:to-blue-700">
+                     transition-all duration-300 ease-in-out 
+                     group-hover:shadow-xl group-hover:scale-105 group-hover:opacity-95 
+                     hover:bg-gradient-to-r hover:from-black hover:via-blue-500 hover:to-blue-700">
                     Start Now
                   </button>
                 </div>
               </Link>
-
             </div>
 
-
-          </div>
+          </motion.div>
         )}
-      </nav>
-    </motion.section>
+      </AnimatePresence>
+
+    </nav>
   );
 };
 
