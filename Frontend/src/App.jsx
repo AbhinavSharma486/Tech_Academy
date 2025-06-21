@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import LandingPage from "./pages/LandingPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import Navbar from "./components/Navbar";
+import ReferralPage from "./pages/ReferralPage";
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
             <Route path="/contact-us" element={<ContactUsPage />} />
             <Route path="/login" element={<AuthWrapper />} />
             <Route path="/register" element={<AuthWrapper />} />
+            <Route path="/refer" element={<ReferralPage />} />
           </Routes>
         </main>
         <Footer />
