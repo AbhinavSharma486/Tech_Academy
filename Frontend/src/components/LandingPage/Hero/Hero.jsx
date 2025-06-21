@@ -20,7 +20,7 @@ export function Hero() {
       />
       {/* <HeroSectionBackground /> */}
       {/* Content Area */}
-      <div className="relative z-20 px-4 md:px-10 py-24 md:py-36 flex flex-col items-center justify-center ">
+      <div className="relative mt-10 md:mt-0 z-20 px-4 md:px-10 py-24 md:py-36 flex flex-col items-center justify-center ">
         <div className="grid grid-cols-1 mt-10 xl:grid-cols-2 gap-y-20 lg:gap-x-0 items-center justify-center w-full max-w-8xl mx-auto">
 
           {/* Text Content */}

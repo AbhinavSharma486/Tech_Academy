@@ -56,7 +56,7 @@ export function AnimatedTooltipPreview() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true }}
     >
-      <div className="bg-blue-200 p-2 py-1 sm:pr-15 rounded-full flex flex-row items-start justify-start md:ml-5 mb-2 w-fit ">
+      <div className="bg-blue-200 p-2 sm:px-4 py-1 pr-8 sm:pr-15 rounded-full flex flex-row items-start justify-start md:ml-5 mb-2 w-fit ">
         <div className="flex items-center justify-center gap-6 text-[3vw] md:text-sm " >
           <span className="flex" > <AnimatedTooltip items={people} /> </span> 35k + happy students
         </div>
