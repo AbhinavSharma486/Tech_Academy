@@ -4,8 +4,7 @@ import mentor from '../../../assets/LandingPageImage/HeroImages/mentor-image.web
 import HeroCard from '../card/3DCard/HeroCard';
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { motion } from "framer-motion";
-// import HeroSectionBackground from "./HeroSectionBackground";
-import HeroImage from '../../../assets/LandingPageImage/HeroImages/landing-page.jpg'
+import HeroImage1 from "../../../assets/LandingPageImage/HeroImages/heroImage1.png";
 import { AnimatedTooltipPreview } from "../card/tooltip/UsersTooltip";
 
 export function Hero() {
@@ -15,8 +14,8 @@ export function Hero() {
       {/* Animated Box Background */}
       <img
         alt="hero image"
-        src={HeroImage}
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-30"
+        src={HeroImage1}
+        className="absolute top-0 left-0 w-full h-full object-cover"
       />
       {/* <HeroSectionBackground /> */}
       {/* Content Area */}

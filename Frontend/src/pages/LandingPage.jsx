@@ -26,11 +26,11 @@ const LandingPage = () => {
     >
       {/* <Home /> */}
       <Hero />
-      <ImpactStats/>
+      <ImpactStats />
       <FAQSection />
       <Review />
       <LoveAndTrust />
-     
+
     </motion.div>
   );
 };
