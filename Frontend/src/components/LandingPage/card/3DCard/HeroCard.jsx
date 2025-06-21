@@ -12,7 +12,7 @@ const HeroCard = ({ src, title, des }) => {
         {/* Left: Text */}
         <div className="flex flex-col justify-between py-5 gap-5 h-full w-full md:w-[60%] z-10">
           {/* Top: Heading and Paragraph */}
-          <div>
+          <div className='flex flex-col w-[60%] md:w-full'> 
             <h2 className="text-[4vw] sm:text-[3vw] md:text-[3vw] lg:text-[2vw] xl:text-[1.5vw] text-white font-bold mb-1">
               {title}
             </h2>
