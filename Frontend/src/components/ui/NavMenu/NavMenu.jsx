@@ -29,7 +29,7 @@ export const MenuItem = ({
     <div
       onMouseEnter={() => {
         clearTimeout(window.leaveTimeout);
-        setActive(item); 
+        setActive(item);
       }}
       onMouseLeave={() => {
         window.leaveTimeout = setTimeout(() => setActive(null), 300); // hide after 0.3s
@@ -94,12 +94,12 @@ export const Menu = ({ setActive, children }) => {
         {/* Start Button + Hamburger */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">
-            <Link to="/">
+            <Link to="/login">
               <div className="group inline-block transition-all duration-300">
                 <button className="text-white font-bold text-lg px-3 py-2 rounded-full bg-gradient-to-r from-blue-500 via-blue-700 to-black 
       transition-all duration-300 ease-in-out 
       group-hover:shadow-xl group-hover:opacity-95 
-      hover:bg-gradient-to-r hover:from-black hover:via-blue-500 hover:to-blue-700">
+      hover:bg-gradient-to-r hover:from-black hover:via-blue-500 hover:to-blue-700 cursor-pointer">
                   Get Started
                 </button>
               </div>
@@ -180,7 +180,7 @@ export const Menu = ({ setActive, children }) => {
 
             {/* Start Now Button for mobile */}
             <div className="flex items-center justify-center" >
-              <Link to="/">
+              <Link to="/login">
                 <div className="group inline-block transition-all duration-300">
                   <button className="text-white font-bold text-lg md:text-xl px-3 py-2 rounded-full bg-gradient-to-r from-blue-500 via-blue-700 to-black 
                      transition-all duration-300 ease-in-out 
@@ -243,5 +243,5 @@ export const DirectNavigate = ({ route, RouteName }) => {
     >
       {RouteName}
     </Link>
-  )
-}
+  );
+};
