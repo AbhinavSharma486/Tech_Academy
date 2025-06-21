@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { DirectNavigate, HoveredLink, Menu, MenuItem, ProductItem } from "./ui/NavMenu/NavMenu";
 import { cn } from "../lib/utils";
-import Logo from '../assets/Logo/Logo';
+import image_one from '../assets/LandingPageImage/HeroImages/tech_image_1.webp'
+import image_two from '../assets/LandingPageImage/HeroImages/tech_image_2.jpg'
 
 export default function NavbarDemo() {
   return (
@@ -26,7 +27,7 @@ function Navbar({ className }) {
   return (
 
     <div className={cn(
-      "fixed top-10 left-4 right-4 md:left-20 md:right-20 max-w-5xl mx-auto z-50",
+      "fixed top-10 mx-auto z-50",
       className
     )}>
       <Menu setActive={setActive}>
@@ -71,33 +72,34 @@ function Navbar({ className }) {
             />
           ) : (
             <MenuItem setActive={setActive} active={active} item="Mentors" hasDropdown>
-              <div className=" text-sm grid grid-cols-2 gap-10 p-4">
+              <div className="text-sm grid grid-cols-2 gap-10 p-4">
                 <ProductItem
-                  title="Algochurn"
-                  href="https://algochurn.com"
-                  src="https://assets.aceternity.com/demos/algochurn.webp"
-                  description="Prepare for tech interviews like never before."
+                  title="CodeCraft Academy"
+                  href="/"
+                  src={image_one}
+                  description="Master programming concepts with hands-on projects."
                 />
                 <ProductItem
-                  title="Tailwind Master Kit"
-                  href="https://tailwindmasterkit.com"
-                  src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                  description="Production ready Tailwind css components for your next project"
+                  title="DesignGenius"
+                  href="/"
+                  src={image_two}
+                  description="Learn UI/UX design principles from industry experts."
                 />
                 <ProductItem
-                  title="Moonbeam"
-                  href="https://gomoonbeam.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                  description="Never write from scratch again. Go from idea to blog in minutes."
+                  title="DataMind Pro"
+                  href="/"
+                  src={image_two}
+                  description="Become a data analytics expert through real-world cases."
                 />
                 <ProductItem
-                  title="Rogue"
-                  href="https://userogue.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                  description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+                  title="CloudNinja"
+                  href="/"
+                  src={image_one}
+                  description="Accelerate your cloud computing skills with certified mentors."
                 />
               </div>
             </MenuItem>
+
           )
         }
 

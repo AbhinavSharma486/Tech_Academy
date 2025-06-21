@@ -8,7 +8,7 @@ const HeroCard = ({ src, title, des }) => {
 
   return (
     <div className="flex items-center justify-center w-[100vw] sm:w-[80vw] md:w-[70vw] max-w-[90vw] lg:max-w-[45vw] xl:max-w-[35vw] h-[30vh] md:h-[35vh] xl:h-[30vh] bg-gray-100 rounded-2xl">
-      <div className="relative group w-full h-full p-4 bg-gradient-to-r from-black via-blue-700 to-blue-900 rounded-2xl flex items-center justify-between overflow-hidden transition-all duration-300 hover:shadow-xl">
+      <div className="relative group w-full h-full p-4 bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 rounded-2xl flex items-center justify-between overflow-hidden transition-all duration-300 hover:shadow-xl">
 
         {/* Left: Text */}
         <div className="flex flex-col justify-between py-5 h-full w-[60%] z-10">
