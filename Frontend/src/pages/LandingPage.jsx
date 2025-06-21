@@ -4,7 +4,7 @@ import FAQSection from "../components/LandingPage/FAQ/FAQSection";
 import { Hero } from '../components/LandingPage/Hero/Hero';
 import { Review } from "../components/LandingPage/Review/Review";
 import { LoveAndTrust } from '../components/LandingPage/Love&Trust/LoveAndTrust';
-
+import ImpactStats from '../components/LandingPage/ImpactCreated/ImpactStats';
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -26,6 +26,7 @@ const LandingPage = () => {
     >
       {/* <Home /> */}
       <Hero />
+      <ImpactStats/>
       <FAQSection />
       <Review />
       <LoveAndTrust />
