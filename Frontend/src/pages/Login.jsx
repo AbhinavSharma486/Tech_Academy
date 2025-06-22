@@ -56,14 +56,14 @@ function Login({ isVisible }) {
           />
           {showpassword ? (
             <div
-              className="absolute top-2 right-2"
+              className="absolute top-1 right-2"
               onClick={() => setShowPassword(false)}
             >
               <Eye />
             </div>
           ) : (
             <div
-              className="absolute top-2 right-2"
+              className="absolute top-1 right-2"
               onClick={() => setShowPassword(true)}
             >
               <EyeOff />

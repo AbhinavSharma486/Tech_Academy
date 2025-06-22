@@ -75,14 +75,14 @@ function Register({ isVisible }) {
         />
        {showpassword ? (
             <div
-              className="absolute top-4 right-2"
+              className="absolute top-3 right-2"
               onClick={() => setShowPassword(false)}
             >
               <Eye />
             </div>
           ) : (
             <div
-              className="absolute top-4 right-2" onClick={() => setShowPassword(true)}><EyeOff /></div>
+              className="absolute top-3 right-2" onClick={() => setShowPassword(true)}><EyeOff /></div>
           )}
         </div>
         <button
