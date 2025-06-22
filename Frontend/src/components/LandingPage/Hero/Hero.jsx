@@ -4,7 +4,7 @@ import mentor from '../../../assets/LandingPageImage/HeroImages/mentor-image.web
 import HeroCard from '../card/3DCard/HeroCard';
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { motion } from "framer-motion";
-import HeroImage1 from "../../../assets/LandingPageImage/HeroImages/heroImage1.png";
+import HeroImage1 from "../../../assets/LandingPageImage/HeroImages/heroImage1.webp";
 import { AnimatedTooltipPreview } from "../card/tooltip/UsersTooltip";
 
 export function Hero() {
