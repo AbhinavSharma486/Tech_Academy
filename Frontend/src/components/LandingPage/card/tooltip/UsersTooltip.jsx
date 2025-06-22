@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimatedTooltip } from "../../../ui/animated-tooltip/Users";
+import { AnimatedTooltip } from "./Users";
 import one from '../../../../assets/LandingPageImage/HeroImages/review_one.avif'
 import two from '../../../../assets/LandingPageImage/HeroImages/review_two.jpg'
 import three from '../../../../assets/LandingPageImage/HeroImages/review_three.jpg'

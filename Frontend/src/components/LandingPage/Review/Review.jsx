@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimatedTestimonials } from "../../ui/ReviewCard/Review";
+import { AnimatedTestimonials } from "./Review_a_ui";
 import one from '../../../assets/LandingPageImage/HeroImages/review_one.avif';
 import two from '../../../assets/LandingPageImage/HeroImages/review_two.jpg';
 import three from '../../../assets/LandingPageImage/HeroImages/review_three.jpg';
