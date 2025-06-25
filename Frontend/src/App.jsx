@@ -9,6 +9,7 @@ import LandingPage from "./pages/LandingPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import Navbar from "./components/Navbar";
 import ReferralPage from "./pages/ReferralPage";
+import Java_FullStack from "./pages/Java_FullStack";
 
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
             <Route path="/login" element={<AuthWrapper />} />
             <Route path="/register" element={<AuthWrapper />} />
             <Route path="/refer" element={<ReferralPage />} />
+            <Route path="/JavaFullStack" element={<Java_FullStack/>} />
           </Routes>
         </main>
         <Footer />
