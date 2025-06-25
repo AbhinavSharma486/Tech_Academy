@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import mentor from '../../../assets/LandingPageImage/HeroImages/mentor-image.webp';
 import HeroCard from '../card/3DCard/HeroCard';
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { motion } from "framer-motion";
@@ -94,24 +93,7 @@ export function Hero() {
               transition={{ duration: 0.7, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <HeroCard
-                src={mentor}
-                title="Web Development"
-                des="Join a platform that turns knowledge into growth."
-              />
-            </motion.section>
-
-            <motion.section
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <HeroCard
-                src={mentor}
-                title="Data Analytics."
-                des="Achieve more with every lesson."
-              />
+              <HeroCard />
             </motion.section>
           </div>
 

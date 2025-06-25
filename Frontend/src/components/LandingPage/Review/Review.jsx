@@ -52,5 +52,13 @@ export function Review() {
       src: six,
     },
   ];
-  return <AnimatedTestimonials testimonials={testimonials} />;
+  return (
+    <div>
+      <div className=" flex items-center justify-center " >
+        <span className="flex w-fit items-center justify-center mt-10 mb-10 text-2xl bg-gradient-to-r from-blue-700 to-blue-500 text-white px-4 py-2 rounded-full font-semibold" >Review Section</span>
+      </div>
+      <AnimatedTestimonials testimonials={testimonials} />;
+    </div>
+  )
+
 }
