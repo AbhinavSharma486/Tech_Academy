@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import backgroundImage from "../../assets/Success_stories/sa.jpg";
 
 // Image imports
@@ -115,16 +116,25 @@ export default function SuccessStories() {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="bg-white bg-opacity-90 rounded-3xl p-8 max-w-7xl mx-auto text-center shadow-xl">
-        <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-5xl font-bold mb-6 leading-tight"
+        >
           Your <span className="text-blue-600">beginning</span> doesn't define you,
           <br className="hidden md:inline" />
           it's your destination that shapes your story.
-        </h2>
+        </motion.h2>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {visibleStories.map((story, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
               className={`${cardColors[idx]} rounded-2xl p-6 shadow-md hover:shadow-2xl transition transform hover:scale-105 flex flex-col h-full`}
             >
               <img
@@ -154,18 +164,23 @@ export default function SuccessStories() {
                   <p className="leading-relaxed">{story.description}</p>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="mt-12">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-12"
+        >
           <button
             onClick={() => setShowAll(!showAll)}
             className="bg-blue-600 text-white px-6 py-2 rounded-full font-medium shadow-md hover:bg-blue-500 transition"
           >
             {showAll ? "Show Less" : "Read More"}
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
