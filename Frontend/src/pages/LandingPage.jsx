@@ -5,7 +5,7 @@ import { Hero } from '../components/LandingPage/Hero/Hero';
 import { Review } from "../components/LandingPage/Review/Review";
 import { LoveAndTrust } from '../components/LandingPage/Love&Trust/LoveAndTrust';
 import ImpactStats from '../components/LandingPage/ImpactCreated/ImpactStats';
-import {MeetTheTeam} from '../components/LandingPage/MeetTeam/MeetTheTeam';
+import { MeetTheTeam } from '../components/LandingPage/MeetTeam/MeetTheTeam';
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -28,11 +28,10 @@ const LandingPage = () => {
       {/* <Home /> */}
       <Hero />
       <ImpactStats />
-      <FAQSection />
       <MeetTheTeam />
-      <Review />
       <LoveAndTrust />
-
+      <Review />
+      <FAQSection />
     </motion.div>
   );
 };

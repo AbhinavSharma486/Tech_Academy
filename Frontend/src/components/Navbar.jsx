@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { DirectNavigate, HoveredLink, Menu, MenuItem, ProductItem } from "./ui/NavMenu/NavMenu";
 import { cn } from "../lib/utils";
-import image_one from '../assets/LandingPageImage/HeroImages/tech_image_1.webp'
-import image_two from '../assets/LandingPageImage/HeroImages/tech_image_2.jpg'
+import image_one from '../assets/LandingPageImage/HeroImages/tech_image_1.webp';
+import image_two from '../assets/LandingPageImage/HeroImages/tech_image_2.jpg';
 
 export default function NavbarDemo() {
   return (
@@ -40,19 +40,19 @@ function Navbar({ className }) {
             item="Courses"
             hasDropdown
             submenu={[
-              { label: "Web Development", href: "/web-dev" },
-              { label: "Data Analytics", href: "/da" },
-              { label: "DSA", href: "/dsa" },
-              { label: "Programming", href: "/programming" },
+              { label: "Java Full Stack", href: "/JavaFullStack" },
+              { label: "Data Analytics", href: "/data-analytics" },
+              { label: "MERN Full Stack", href: "/mernfullstack" },
+              { label: "Data Scient & AI", href: "/datascience&ai" },
             ]}
           />
         ) : (
           <MenuItem setActive={setActive} active={active} item="Courses" hasDropdown>
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/web-dev">Web Development</HoveredLink>
-              <HoveredLink href="/da">Data Analytics</HoveredLink>
-              <HoveredLink href="/dsa">DSA</HoveredLink>
-              <HoveredLink href="/programming">Programming</HoveredLink>
+              <HoveredLink href="/JavaFullStack">Java Full Stack</HoveredLink>
+              <HoveredLink href="/data-analytics">Data Analytics</HoveredLink>
+              <HoveredLink href="/mernfullstack">MERN Full Stack</HoveredLink>
+              <HoveredLink href="/datascience&ai">Data Scient & AI</HoveredLink>
             </div>
           </MenuItem>
         )}
@@ -102,6 +102,26 @@ function Navbar({ className }) {
 
           )
         }
+
+        {isMobile ? (
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="More"
+            hasDropdown
+            submenu={[
+              { label: "Success Stories", href: "/success_stories" },
+              { label: "Refer & Earn", href: "/refer" },
+            ]}
+          />
+        ) : (
+          <MenuItem setActive={setActive} active={active} item="More" hasDropdown>
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/success_stories">Success Stories</HoveredLink>
+              <HoveredLink href="/refer">Refer & Earn</HoveredLink>
+            </div>
+          </MenuItem>
+        )}
 
         {/* <DirectNavigate route={'/'} RouteName={'Review'} /> */}
         <DirectNavigate route={'/contact-us'} RouteName={'Contact'} />
