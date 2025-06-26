@@ -8,7 +8,7 @@ function Wrapper({ children }) {
   const isRegister = location.pathname === "/register";
 
   return (
-    <div className="bg-gradient-to-br from-[#1e40af] via-[#60a5fa] to-[#f0f9ff] flex flex-col items-center justify-center h-screen relative">
+    <div className="bg-gradient-to-br from-[#1e40af] via-[#60a5fa] to-[#f0f9ff] flex flex-col items-center justify-center min-h-screen pt-20 relative">
       <div className="absolute top-[20%] right-[10%] z-0 md:block hidden animate-pulse duration-1000">
         <div className="w-[100px] h-[100px] bg-white/10 rounded-full blur-2xl absolute -top-5 -left-5"></div>
         <svg
@@ -58,19 +58,17 @@ function Wrapper({ children }) {
         {children}
 
         <div
-          className={`absolute top-0 ${
-            isRegister
-              ? "md:left-0 md:rounded-tr-[150px] md:rounded-br-[100px] md:rounded-tl-0 md:rounded-bl-0 translate-y-[85%] md:translate-y-0"
-              : "md:left-[50%] md:rounded-tl-[150px] md:rounded-bl-[100px] md:rounded-tr-0 md:rounded-br-0 -translate-y-[85%] md:translate-y-0"
-          } z-20 min-w-[280px] w-full md:w-[50%] md:h-[100%] h-[100%] overflow-hidden transition-all duration-[600ms] ease-in-out 
+          className={`absolute top-0 ${isRegister
+            ? "md:left-0 md:rounded-tr-[150px] md:rounded-br-[100px] md:rounded-tl-0 md:rounded-bl-0 translate-y-[85%] md:translate-y-0"
+            : "md:left-[50%] md:rounded-tl-[150px] md:rounded-bl-[100px] md:rounded-tr-0 md:rounded-br-0 -translate-y-[85%] md:translate-y-0"
+            } z-20 min-w-[280px] w-full md:w-[50%] md:h-[100%] h-[100%] overflow-hidden transition-all duration-[600ms] ease-in-out 
  `}
         >
           <div
-            className={`flex bg-blue-500 h-[100%] md:p-10 p-0 text-white relative flex-col justify-around md:gap-30 gap-80 md:flex-row items-center left-0 md:w-[200%] w-[100%] md:h-full transition-all duration-600  ease-in-out ${
-              isRegister
-                ? "md:translate-x-0  md:translate-y-0  rounded-tl-[100px] rounded-tr-[100px] rounded-bl-[0px] rounded-br-[0px] md:rounded-tl-[0px] md:rounded-tr-[0px]"
-                : "md:-translate-x-1/2  md:-translate-y-0   rounded-bl-[100px] rounded-br-[100px] rounded-tl-[0px] rounded-tr-[0px] md:rounded-bl-[0px] md:rounded-br-[0px]"
-            }`}
+            className={`flex bg-blue-500 h-[100%] md:p-10 p-0 text-white relative flex-col justify-around md:gap-30 gap-80 md:flex-row items-center left-0 md:w-[200%] w-[100%] md:h-full transition-all duration-600  ease-in-out ${isRegister
+              ? "md:translate-x-0  md:translate-y-0  rounded-tl-[100px] rounded-tr-[100px] rounded-bl-[0px] rounded-br-[0px] md:rounded-tl-[0px] md:rounded-tr-[0px]"
+              : "md:-translate-x-1/2  md:-translate-y-0   rounded-bl-[100px] rounded-br-[100px] rounded-tl-[0px] rounded-tr-[0px] md:rounded-bl-[0px] md:rounded-br-[0px]"
+              }`}
           >
             <div className="md:w-1/2 w-full flex flex-col items-center justify-center ">
               <h1 className="text-3xl font-bold hidden md:block">
