@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const mentors = [
   {
@@ -79,6 +80,13 @@ export const MeetTheTeam = () => {
   const [paused, setPaused] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  useEffect(() => {
+    if (inView) controls.start("visible");
+  }, [inView, controls]);
+
   useEffect(() => {
     let scrollAmount = 0;
     const container = scrollRef.current;
@@ -94,36 +102,64 @@ export const MeetTheTeam = () => {
     return () => clearInterval(interval);
   }, [paused]);
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -40 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
   return (
-    <section className="py-16  bg-gradient-to-br from-[#0b5ed7] via-[#5a9cf5] to-[#eaf4ff] ">
+    <section className="py-16 bg-gradient-to-br from-[#0b5ed7] via-[#5a9cf5] to-[#eaf4ff]">
       <div className="text-center text-white mb-10 px-4">
         <h3 className="text-sm tracking-widest font-semibold uppercase">
           Empower Your Future with Tech Skills
         </h3>
         <h2 className="text-3xl sm:text-4xl font-bold mt-2">
-           <span className="bg-white px-4 py-1 rounded-md inline-block">
-    <span className="bg-gradient-to-r from-[#0b5ed7] via-[#5a9cf5] to-[#7b61ff] bg-clip-text text-transparent">
-      Learn
-    </span>
-  </span>{" "}
+          <span className="bg-white px-4 py-1 rounded-md inline-block">
+            <span className="bg-gradient-to-r from-[#0b5ed7] via-[#5a9cf5] to-[#7b61ff] bg-clip-text text-transparent">
+              Learn
+            </span>
+          </span>{" "}
           from Tech Academy's Mentor
         </h2>
         <p className="text-sm sm:text-base mt-4">
-            Our mentors guide you through real-world projects, personalized doubt sessions.
+          Our mentors guide you through real-world projects, personalized doubt sessions.
         </p>
       </div>
 
-      {/* OUTER padding for spacing */}
-      <div className="px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-36"> 
+      <div className="px-6 sm:px-10 lg:px-20 xl:px-28 2xl:px-36">
         <div
           className="overflow-x-auto scrollbar-hide cursor-grab"
           ref={scrollRef}
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          <div className="flex gap-4 w-max">
+          <motion.div
+            ref={ref}
+            className="flex gap-4 w-max"
+            variants={containerVariants}
+            initial="hidden"
+            animate={controls}
+          >
             {mentors.map((mentor, idx) => (
-              <div
+              <motion.div
                 key={idx}
+                variants={cardVariants}
                 className={`relative flex h-72 flex-shrink-0 rounded-2xl group transition-all duration-300 overflow-hidden
                   w-[260px] hover:w-[500px]`}
                 onMouseEnter={() => {
@@ -148,18 +184,18 @@ export const MeetTheTeam = () => {
                       ? { width: "240px", opacity: 1 }
                       : { width: 0, opacity: 0 }
                   }
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
                   className="h-full bg-white rounded-r-2xl shadow-xl p-5 overflow-hidden flex flex-col justify-center"
                 >
                   <h3 className="text-lg font-bold text-[#071952] mb-1">{mentor.name}</h3>
                   <p className="text-sm mb-3 text-gray-700">{mentor.title}</p>
                   <p className="text-xs text-gray-600 leading-relaxed">{mentor.description}</p>
                 </motion.div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
   );
-}
+};
