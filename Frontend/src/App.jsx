@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import ReferralPage from "./pages/ReferralPage";
 import Java_FullStack from "./pages/Java_FullStack";
 import DataAnalyticsPage from "./pages/DataAnalytics";
+import CoursesSection from "./components/Courses/CoursesSection";
 
 import SuccessStories from './components/SuccessStory/SuccessStories';
 import Mern_FullStack from "./pages/Mern_FullStack";
@@ -78,6 +79,7 @@ function App() {
             <Route path="/data-analytics" element={<DataAnalyticsPage/>} />
             <Route path="/success_stories" element={<SuccessStories />} />
             <Route path="/mern-fullstack" element={<Mern_FullStack />} />
+            <Route path="/courses" element={<CoursesSection />} />
           </Routes>
         </main>
         <Footer />
