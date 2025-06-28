@@ -27,16 +27,17 @@ export function TimelineDemo() {
                     <p className="mb-6 text-sm font-normal text-black md:text-base">
                         Start your journey by mastering HTML, CSS, JavaScript, and React. Apply concepts through real-world projects from the start.
                     </p>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-4 mb-5">
                         <img src={image_1} alt="Learning 1" className="w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60" />
                         <img src={image_2} alt="Learning 2" className="w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60" />
-                        <RatingCard
-                            rating={7.5}
-                            heading="Learning Module"
-                            comment="This course was extremely helpful. The content was clear and well-structured."
-                        />
 
                     </div>
+                    <RatingCard
+                        rating={7.5}
+                        heading="Learning Module"
+                        comment="This course was extremely helpful. The content was clear and well-structured."
+                    />
+
                 </div>
             ),
         },
@@ -48,15 +49,15 @@ export function TimelineDemo() {
                     <p className="mb-6 text-sm font-normal text-black md:text-base">
                         Attend live weekly doubt-clearing sessions with industry experts to ensure complete concept clarity.
                     </p>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-4 mb-5">
                         <img src={image_4} alt="Meeting 1" className="w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60" />
                         <img src={image_5} alt="Meeting 2" className="w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60" />
-                        <RatingCard
-                            rating={8.2}
-                            heading="Mentorship Sessions"
-                            comment="Mentors were supportive and always available to clarify doubts. Great learning experience."
-                        />
                     </div>
+                    <RatingCard
+                        rating={8.2}
+                        heading="Mentorship Sessions"
+                        comment="Mentors were supportive and always available to clarify doubts. Great learning experience."
+                    />
                 </div>
             ),
         },
@@ -68,16 +69,17 @@ export function TimelineDemo() {
                     <p className="mb-6 text-sm font-normal text-black md:text-base">
                         Get personalized guidance through 1-on-1 mentorship from experienced developers who help accelerate your learning.
                     </p>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-4 mb-5">
                         <img src={image_6} alt="Mentor 1" className="w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60" />
                         <img src={image_7} alt="Mentor 2" className="w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60" />
-                        <RatingCard
-                            rating={9.0}
-                            heading="Live Meetings"
-                            comment="The live meetings helped me stay accountable and on track. Super interactive sessions!"
-                        />
+
 
                     </div>
+                    <RatingCard
+                        rating={9.0}
+                        heading="Live Meetings"
+                        comment="The live meetings helped me stay accountable and on track. Super interactive sessions!"
+                    />
                 </div>
             ),
         },
@@ -85,20 +87,21 @@ export function TimelineDemo() {
             title: "Module 4",
             content: (
                 <div>
-                    <p className="text-xl md:text-2xl mb-2" >Placement Support</p>
+                    <p className="text-xl md:text-2xl mb-2 " >Placement Support</p>
                     <p className="mb-6 text-sm font-normal text-black md:text-base">
                         Access resume reviews, mock interviews, and referrals to top companies for full-time or internship opportunities.
                     </p>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-4 mb-5">
                         <img src={image_8} alt="Placement 1" className="w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60" />
                         <img src={image_9} alt="Placement 2" className="w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60" />
-                        <RatingCard
-                            rating={9.3}
-                            heading="Placement Support"
-                            comment="Excellent placement support! I received resume help, mock interviews, and job referrals."
-                        />
+
 
                     </div>
+                    <RatingCard
+                        rating={9.3}
+                        heading="Placement Support"
+                        comment="Excellent placement support! I received resume help, mock interviews, and job referrals."
+                    />
                 </div>
             ),
         },
@@ -106,21 +109,22 @@ export function TimelineDemo() {
             title: "Module 5",
             content: (
                 <div>
-                    <p className="text-xl md:text-2xl mb-2" > Build Production-Level Projects</p>
+                    <p className="text-xl md:text-2xl mb-2 " > Build Production-Level Projects</p>
 
                     <p className="mb-6 text-sm font-normal text-black md:text-base">
                         Work on capstone projects that simulate real startup environments. Add impressive projects to your portfolio.
                     </p>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-4 mb-5">
                         <img src={image_10} alt="Project 1" className="w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60" />
                         <img src={image_11} alt="Project 2" className="w-full rounded-lg object-cover shadow-md md:h-44 lg:h-60" />
-                        <RatingCard
-                            rating={8.7}
-                            heading="Hands-On Projects"
-                            comment="The projects were challenging and practical. They really helped me apply what I learned."
-                        />
+
 
                     </div>
+                    <RatingCard
+                        rating={8.7}
+                        heading="Hands-On Projects"
+                        comment="The projects were challenging and practical. They really helped me apply what I learned."
+                    />
                 </div>
             ),
         },

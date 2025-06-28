@@ -53,7 +53,7 @@ const Course_curriculum = () => {
                         <FaArrowRight className="text-blue-600 text-2xl mt-2" />
                     </div>
 
-                    <div className="relative w-60 sm:w-70 h-12 flex items-center justify-center text-center">
+                    <div className="relative w-35 sm:w-70 h-12 flex items-center justify-center text-center">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={index}
