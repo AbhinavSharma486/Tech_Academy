@@ -42,7 +42,7 @@ function Navbar({ className }) {
             submenu={[
               { label: "Java Full Stack", href: "/JavaFullStack" },
               { label: "Data Analytics", href: "/data-analytics" },
-              { label: "MERN Full Stack", href: "/mernfullstack" },
+              { label: "MERN Full Stack", href: "/mern-fullstack" },
               { label: "Data Scient & AI", href: "/datascience&ai" },
             ]}
           />
@@ -51,7 +51,7 @@ function Navbar({ className }) {
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/JavaFullStack">Java Full Stack</HoveredLink>
               <HoveredLink href="/data-analytics">Data Analytics</HoveredLink>
-              <HoveredLink href="/mernfullstack">MERN Full Stack</HoveredLink>
+              <HoveredLink href="/mern-fullstack">MERN Full Stack</HoveredLink>
               <HoveredLink href="/datascience&ai">Data Scient & AI</HoveredLink>
             </div>
           </MenuItem>

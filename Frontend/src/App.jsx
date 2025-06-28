@@ -13,6 +13,7 @@ import Java_FullStack from "./pages/Java_FullStack";
 import DataAnalyticsPage from "./pages/DataAnalytics";
 
 import SuccessStories from './components/SuccessStory/SuccessStories';
+import Mern_FullStack from "./pages/Mern_FullStack";
 
 function App() {
   const [toastPosition, setToastPosition] = useState("top-right");
@@ -76,6 +77,7 @@ function App() {
             <Route path="/JavaFullStack" element={<Java_FullStack/>} />
             <Route path="/data-analytics" element={<DataAnalyticsPage/>} />
             <Route path="/success_stories" element={<SuccessStories />} />
+            <Route path="/mern-fullstack" element={<Mern_FullStack />} />
           </Routes>
         </main>
         <Footer />
