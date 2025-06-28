@@ -40,6 +40,7 @@ function Navbar({ className }) {
             item="Courses"
             hasDropdown
             submenu={[
+              { label: "All Courses", href: "/courses" },
               { label: "Java Full Stack", href: "/JavaFullStack" },
               { label: "Data Analytics", href: "/data-analytics" },
               { label: "MERN Full Stack", href: "/mern-fullstack" },
@@ -49,6 +50,7 @@ function Navbar({ className }) {
         ) : (
           <MenuItem setActive={setActive} active={active} item="Courses" hasDropdown>
             <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/courses">All Courses</HoveredLink>
               <HoveredLink href="/JavaFullStack">Java Full Stack</HoveredLink>
               <HoveredLink href="/data-analytics">Data Analytics</HoveredLink>
               <HoveredLink href="/mern-fullstack">MERN Full Stack</HoveredLink>
