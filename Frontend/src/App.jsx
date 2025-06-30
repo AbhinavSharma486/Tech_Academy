@@ -1,7 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
-import { useEffect, useState } from "react";
 
 import AuthWrapper from "./components/LoginRegisterPage/AuthWrapper";
 import Footer from './components/Footer';
@@ -11,80 +9,28 @@ import Navbar from "./components/Navbar";
 import ReferralPage from "./pages/ReferralPage";
 import Java_FullStack from "./pages/Java_FullStack";
 import DataAnalyticsPage from "./pages/DataAnalytics";
-import CoursesSection from "./components/Courses/CoursesSection";
-
 import SuccessStories from './components/SuccessStory/SuccessStories';
 import Mern_FullStack from "./pages/Mern_FullStack";
 
 function App() {
-  const [toastPosition, setToastPosition] = useState("top-right");
-  const [containerStyle, setContainerStyle] = useState({
-    top: "40px",
-    right: "45px",
-    zIndex: 9999,
-  });
-
-  const [toastStyle, setToastStyle] = useState({
-    fontSize: "14px",
-    padding: "12px 16px",
-    borderRadius: "8px",
-  });
-
-  useEffect(() => {
-    const updateToastSettings = () => {
-      if (window.innerWidth <= 768) {
-        setToastPosition("top-center");
-        setContainerStyle({
-          top: "20px",
-          left: "10px",
-          right: "10px",
-          zIndex: 9999,
-        });
-        setToastStyle({
-          fontSize: "14px",
-          padding: "12px 16px",
-          borderRadius: "8px",
-        });
-      } else {
-        setToastPosition("top-right");
-        setContainerStyle({
-          top: "40px",
-          right: "45px",
-          zIndex: 9999,
-        });
-        setToastStyle({
-          fontSize: "18px",
-          padding: "16px 24px",
-          borderRadius: "10px",
-        });
-      }
-    };
-
-    updateToastSettings();
-    window.addEventListener("resize", updateToastSettings);
-    return () => window.removeEventListener("resize", updateToastSettings);
-  }, []);
   return (
-    <>
-      <div>
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/contact-us" element={<ContactUsPage />} />
-            <Route path="/login" element={<AuthWrapper />} />
-            <Route path="/register" element={<AuthWrapper />} />
-            <Route path="/refer" element={<ReferralPage />} />
-            <Route path="/JavaFullStack" element={<Java_FullStack/>} />
-            <Route path="/data-analytics" element={<DataAnalyticsPage/>} />
-            <Route path="/success_stories" element={<SuccessStories />} />
-            <Route path="/mern-fullstack" element={<Mern_FullStack />} />
-            <Route path="/courses" element={<CoursesSection />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
+          <Route path="/login" element={<AuthWrapper />} />
+          <Route path="/register" element={<AuthWrapper />} />
+          <Route path="/refer" element={<ReferralPage />} />
+          <Route path="/JavaFullStack" element={<Java_FullStack />} />
+          <Route path="/data-analytics" element={<DataAnalyticsPage />} />
+          <Route path="/success_stories" element={<SuccessStories />} />
+          <Route path="/mern-fullstack" element={<Mern_FullStack />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 }
 

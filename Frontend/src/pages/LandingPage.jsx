@@ -6,7 +6,7 @@ import { LoveAndTrust } from '../components/LandingPage/Love&Trust/LoveAndTrust'
 import ImpactStats from '../components/LandingPage/ImpactCreated/ImpactStats';
 import { MeetTheTeam } from '../components/LandingPage/MeetTeam/MeetTheTeam';
 import StudentReviews from '../components/LandingPage/StudentsReview/studentsreview';
-import CoursesSection from '../components/Courses/CoursesSection';
+import CoursesSection from '../components/LandingPage/courses/CoursesSection';
 
 const containerVariants = {
   hidden: { opacity: 0 },
