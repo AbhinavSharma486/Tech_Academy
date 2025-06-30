@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { DirectNavigate, HoveredLink, Menu, MenuItem, ProductItem } from "./ui/NavMenu/NavMenu";
 import { cn } from "../lib/utils";
-import image_one from '../assets/LandingPageImage/HeroImages/tech_image_1.webp';
-import image_two from '../assets/LandingPageImage/HeroImages/tech_image_2.jpg';
+import mentor1 from "../assets/Navbar/mentor1.jpg";
+import mentor2 from "../assets/Navbar/mentor2.jpg";
+import mentor3 from "../assets/Navbar/mentor3.jpeg";
+import mentor4 from "../assets/Navbar/mentor4.jpg";
 
 export default function NavbarDemo() {
   return (
@@ -40,20 +42,18 @@ function Navbar({ className }) {
             item="Courses"
             hasDropdown
             submenu={[
-              { label: "All Courses", href: "/courses" },
               { label: "Java Full Stack", href: "/JavaFullStack" },
-              { label: "Data Analytics", href: "/data-analytics" },
               { label: "MERN Full Stack", href: "/mern-fullstack" },
+              { label: "Data Analytics", href: "/data-analytics" },
               { label: "Data Scient & AI", href: "/datascience&ai" },
             ]}
           />
         ) : (
           <MenuItem setActive={setActive} active={active} item="Courses" hasDropdown>
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/courses">All Courses</HoveredLink>
               <HoveredLink href="/JavaFullStack">Java Full Stack</HoveredLink>
-              <HoveredLink href="/data-analytics">Data Analytics</HoveredLink>
               <HoveredLink href="/mern-fullstack">MERN Full Stack</HoveredLink>
+              <HoveredLink href="/data-analytics">Data Analytics</HoveredLink>
               <HoveredLink href="/datascience&ai">Data Scient & AI</HoveredLink>
             </div>
           </MenuItem>
@@ -66,37 +66,37 @@ function Navbar({ className }) {
               item="Mentors"
               hasDropdown
               submenu={[
-                { label: "Algochurn", href: "/web-dev" },
-                { label: "Tailwind Master Kit", href: "/da" },
-                { label: "Moonbeam", href: "/dsa" },
-                { label: "Rogue", href: "/programming" },
+                { label: "Hitesh Chaudhary", href: "/" },
+                { label: "Aman Dhattarwal", href: "/" },
+                { label: "Aryan Singh", href: "/" },
+                { label: "Akshay Saini", href: "/" },
               ]}
             />
           ) : (
             <MenuItem setActive={setActive} active={active} item="Mentors" hasDropdown>
               <div className="text-sm grid grid-cols-2 gap-10 p-4">
                 <ProductItem
-                  title="CodeCraft Academy"
+                  title="Hitesh Chaudhary"
                   href="/"
-                  src={image_one}
+                  src={mentor1}
                   description="Master programming concepts with hands-on projects."
                 />
                 <ProductItem
-                  title="DesignGenius"
+                  title="Aman Dhattarwal"
                   href="/"
-                  src={image_two}
+                  src={mentor2}
                   description="Learn UI/UX design principles from industry experts."
                 />
                 <ProductItem
-                  title="DataMind Pro"
+                  title="Aryan Singh"
                   href="/"
-                  src={image_two}
+                  src={mentor3}
                   description="Become a data analytics expert through real-world cases."
                 />
                 <ProductItem
-                  title="CloudNinja"
+                  title="Akshay Saini"
                   href="/"
-                  src={image_one}
+                  src={mentor4}
                   description="Accelerate your cloud computing skills with certified mentors."
                 />
               </div>

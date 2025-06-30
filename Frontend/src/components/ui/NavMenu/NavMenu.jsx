@@ -231,13 +231,13 @@ export const Menu = ({ children }) => {
 export const ProductItem = ({ title, description, href, src }) => {
   return (
     <Link to={href} className="flex space-x-2 group">
-      <img
-        src={src}
-        width={140}
-        height={70}
-        alt={title}
-        className="shrink-0 rounded-md shadow-2xl"
-      />
+      <div className="w-[140px] h-[70px] shrink-0 rounded-md shadow-2xl overflow-hidden">
+        <img
+          src={src}
+          alt={title}
+          className="w-full h-full object-contain"
+        />
+      </div>
       <div>
         <h4 className="text-xl font-bold mb-1 text-black group-hover:text-blue-700 transition-colors duration-200">
           {title}
@@ -249,6 +249,7 @@ export const ProductItem = ({ title, description, href, src }) => {
     </Link>
   );
 };
+
 
 export const HoveredLink = ({ children, ...rest }) => {
   return (
