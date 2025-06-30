@@ -32,7 +32,7 @@ export const LoveAndTrust = () => {
   };
 
   return (
-    <div className="w-full bg-gradient-to-r from-[#0B1E5B] to-[#0F3BAA] py-16 px-4 flex flex-col items-center">
+    <div className="w-full bg-gradient-to-b from-sky-900 to-sky-700  py-16 px-4 flex flex-col items-center">
 
       {/* Heading */}
       <div className="text-center mb-12">
@@ -71,7 +71,7 @@ export const LoveAndTrust = () => {
             initial={{ y: 40 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="flex flex-col absolute top-0 left-0 w-full gap-4"
+            className="flex flex-col absolute top-0 left-0 w-full gap-4 overflow-hidden rounded-2xl"
           >
             {getIndexes().map((i, idx) => {
               const isMiddle = idx === 2;
@@ -86,9 +86,7 @@ export const LoveAndTrust = () => {
                     opacity: isMiddle ? 1 : 0.4,
                   }}
                   transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className={`bg-gradient-to-r from-[#1836a8] to-[#1649bf]
-        rounded-2xl shadow-lg text-white text-center 
-        backdrop-blur-md w-full px-4 flex items-center justify-center`}
+                  className={`bg-gradient-to-r from-[#facc15] to-[#fb923c rounded-2xl text-white text-center backdrop-blur-md w-full px-4 flex items-center justify-center shadow-xl`}
                 >
                   {isMiddle && (
                     <motion.div

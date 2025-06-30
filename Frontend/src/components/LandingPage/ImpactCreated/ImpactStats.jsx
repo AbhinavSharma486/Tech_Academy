@@ -44,7 +44,7 @@ const ImpactStats = () => {
     }, [inView, controls]);
 
     return (
-        <div className="bg-gradient-to-b from-blue-900 to-blue-700 text-white py-16 px-4">
+        <div className="bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-16 px-4">
             <h2 className="text-center text-3xl font-semibold mb-12 uppercase tracking-wide">
                 <span className="border-b-2 border-white pb-1">Impact Created</span>
             </h2>
@@ -59,7 +59,7 @@ const ImpactStats = () => {
                 {stats.map((stat, idx) => (
                     <motion.div
                         key={idx}
-                        className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center transition duration-300 hover:scale-105 shadow-xl ring-2 ring-blue-300/40 hover:ring-blue-200/70"
+                        className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center transition duration-300 hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.2)] ring-2 ring-blue-300/40 hover:ring-blue-200/70"
                         variants={cardVariants}
                     >
                         <div className="border border-white/30 rounded-xl p-4 shadow-[0_0_15px_2px_rgba(255,255,255,0.2)]">
