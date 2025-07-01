@@ -4,6 +4,7 @@ import FAQSection from "../components/LandingPage/FAQ/FAQSection";
 import { Hero } from '../components/LandingPage/Hero/Hero';
 import { Review } from "../components/LandingPage/Review/Review";
 import { LoveAndTrust } from '../components/LandingPage/Love&Trust/LoveAndTrust';
+import ApplyUpcomingBatches from '../components/LandingPage/UpcomingBatches/ApplyUpcomingBatches';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,7 +30,7 @@ const LandingPage = () => {
       <FAQSection />
       <Review />
       <LoveAndTrust />
-     
+      <ApplyUpcomingBatches/>
     </motion.div>
   );
 };
