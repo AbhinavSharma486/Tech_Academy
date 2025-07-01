@@ -7,28 +7,40 @@ function Login({ isVisible }) {
   const [password, setPassword] = useState("");
   const [showpassword, setShowPassword] = useState(false);
 
+  // Validation functions
   const isEmailValid = (email) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
   const isPasswordValid = (password) => password.length >= 5;
 
   function handleSubmit(e) {
     e.preventDefault();
+
     if (!email || !password) {
       toast.error("Kindly fill all the fields!");
-    } else {
-      toast.success("Login Successful!");
-      setEmail("");
-      setPassword("");
+      return;
     }
+
+    if (!isEmailValid(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    if (!isPasswordValid(password)) {
+      toast.error("Password must be at least 5 characters long.");
+      return;
+    }
+
+    toast.success("Login Successful!");
+    setEmail("");
+    setPassword("");
   }
 
   return (
     <div
-      className={`absolute top-0 w-full md:w-1/2 flex flex-col items-center justify-center transition-all duration-500 ease-in-out h-full px-10 ${
-        isVisible
-          ? "opacity-100 z-10 translate-y-0"
-          : "opacity-0 z-0 translate-y-[25%]"
-      }`}
+      className={`absolute top-0 w-full md:w-1/2 flex flex-col items-center justify-center transition-all duration-500 ease-in-out h-full px-10 ${isVisible
+        ? "opacity-100 z-10 translate-y-0"
+        : "opacity-0 z-0 translate-y-[25%]"
+        }`}
     >
       <form
         className="w-full flex flex-col items-center"
@@ -56,14 +68,14 @@ function Login({ isVisible }) {
           />
           {showpassword ? (
             <div
-              className="absolute top-2 right-2"
+              className="absolute top-1 right-2"
               onClick={() => setShowPassword(false)}
             >
               <Eye />
             </div>
           ) : (
             <div
-              className="absolute top-2 right-2"
+              className="absolute top-1 right-2"
               onClick={() => setShowPassword(true)}
             >
               <EyeOff />

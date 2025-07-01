@@ -1,27 +1,49 @@
-import React from 'react';
-import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
-const FAQItem = ({ question, answer, isOpen, onToggle }) => {
+const FAQItem = ({ question, answer, isOpen, onToggle, variants }) => {
   return (
-    <div className="border-b bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
+    <motion.div
+      layout
+      variants={variants}
+      className="bg-white rounded-xl shadow p-5"
+    >
       <button
+        className="flex justify-between items-center w-full text-left"
         onClick={onToggle}
-        className="w-full text-left px-5 py-4 flex justify-between items-center"
       >
-        <span className="font-medium text-gray-800 text-base">{question}</span>
-        <ChevronDownIcon
-          className={`h-5 w-5 text-gray-500 transform transition-transform duration-300 ${
-            isOpen ? 'rotate-180' : ''
-          }`}
-        />
+        <span className="text-lg font-medium text-gray-800">{question}</span>
+        <motion.span
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ChevronDownIcon className="w-5 h-5 text-gray-500" />
+        </motion.span>
       </button>
 
-      {isOpen && (
-        <div className="px-5 pb-4 pt-1">
-          <p className="text-gray-600 text-sm leading-relaxed">{answer}</p>
-        </div>
-      )}
-    </div>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            key="content"
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: { height: "auto", opacity: 1 },
+              collapsed: { height: 0, opacity: 0 },
+            }}
+            transition={{
+              duration: 0.5, 
+              ease: [0.25, 0.1, 0.25, 1],
+            }}
+            className="overflow-hidden mt-3"
+          >
+            <p className="text-sm text-gray-600">{answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 

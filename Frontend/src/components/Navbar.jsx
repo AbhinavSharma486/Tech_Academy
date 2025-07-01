@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { DirectNavigate, HoveredLink, Menu, MenuItem, ProductItem } from "./ui/NavMenu/NavMenu";
 import { cn } from "../lib/utils";
-import Logo from '../assets/Logo/Logo';
+import mentor1 from "../assets/Navbar/mentor1.jpg";
+import mentor2 from "../assets/Navbar/mentor2.jpg";
+import mentor3 from "../assets/Navbar/mentor3.jpeg";
+import mentor4 from "../assets/Navbar/mentor4.jpg";
 
 export default function NavbarDemo() {
   return (
@@ -26,7 +29,7 @@ function Navbar({ className }) {
   return (
 
     <div className={cn(
-      "fixed top-10 left-4 right-4 md:left-20 md:right-20 max-w-5xl mx-auto z-50",
+      "fixed top-10 mx-auto z-50",
       className
     )}>
       <Menu setActive={setActive}>
@@ -39,19 +42,19 @@ function Navbar({ className }) {
             item="Courses"
             hasDropdown
             submenu={[
-              { label: "Web Development", href: "/web-dev" },
-              { label: "Data Analytics", href: "/da" },
-              { label: "DSA", href: "/dsa" },
-              { label: "Programming", href: "/programming" },
+              { label: "Java Full Stack", href: "/JavaFullStack" },
+              { label: "MERN Full Stack", href: "/mern-fullstack" },
+              { label: "Data Analytics", href: "/data-analytics" },
+              { label: "Data Scient & AI", href: "/datascience&ai" },
             ]}
           />
         ) : (
           <MenuItem setActive={setActive} active={active} item="Courses" hasDropdown>
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/web-dev">Web Development</HoveredLink>
-              <HoveredLink href="/da">Data Analytics</HoveredLink>
-              <HoveredLink href="/dsa">DSA</HoveredLink>
-              <HoveredLink href="/programming">Programming</HoveredLink>
+              <HoveredLink href="/JavaFullStack">Java Full Stack</HoveredLink>
+              <HoveredLink href="/mern-fullstack">MERN Full Stack</HoveredLink>
+              <HoveredLink href="/data-analytics">Data Analytics</HoveredLink>
+              <HoveredLink href="/datascience&ai">Data Scient & AI</HoveredLink>
             </div>
           </MenuItem>
         )}
@@ -63,43 +66,64 @@ function Navbar({ className }) {
               item="Mentors"
               hasDropdown
               submenu={[
-                { label: "Algochurn", href: "/web-dev" },
-                { label: "Tailwind Master Kit", href: "/da" },
-                { label: "Moonbeam", href: "/dsa" },
-                { label: "Rogue", href: "/programming" },
+                { label: "Hitesh Chaudhary", href: "/" },
+                { label: "Aman Dhattarwal", href: "/" },
+                { label: "Aryan Singh", href: "/" },
+                { label: "Akshay Saini", href: "/" },
               ]}
             />
           ) : (
             <MenuItem setActive={setActive} active={active} item="Mentors" hasDropdown>
-              <div className=" text-sm grid grid-cols-2 gap-10 p-4">
+              <div className="text-sm grid grid-cols-2 gap-10 p-4">
                 <ProductItem
-                  title="Algochurn"
-                  href="https://algochurn.com"
-                  src="https://assets.aceternity.com/demos/algochurn.webp"
-                  description="Prepare for tech interviews like never before."
+                  title="Hitesh Chaudhary"
+                  href="/"
+                  src={mentor1}
+                  description="Master programming concepts with hands-on projects."
                 />
                 <ProductItem
-                  title="Tailwind Master Kit"
-                  href="https://tailwindmasterkit.com"
-                  src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                  description="Production ready Tailwind css components for your next project"
+                  title="Aman Dhattarwal"
+                  href="/"
+                  src={mentor2}
+                  description="Learn UI/UX design principles from industry experts."
                 />
                 <ProductItem
-                  title="Moonbeam"
-                  href="https://gomoonbeam.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                  description="Never write from scratch again. Go from idea to blog in minutes."
+                  title="Aryan Singh"
+                  href="/"
+                  src={mentor3}
+                  description="Become a data analytics expert through real-world cases."
                 />
                 <ProductItem
-                  title="Rogue"
-                  href="https://userogue.com"
-                  src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                  description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+                  title="Akshay Saini"
+                  href="/"
+                  src={mentor4}
+                  description="Accelerate your cloud computing skills with certified mentors."
                 />
               </div>
             </MenuItem>
+
           )
         }
+
+        {isMobile ? (
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="More"
+            hasDropdown
+            submenu={[
+              { label: "Success Stories", href: "/success_stories" },
+              { label: "Refer & Earn", href: "/refer" },
+            ]}
+          />
+        ) : (
+          <MenuItem setActive={setActive} active={active} item="More" hasDropdown>
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/success_stories">Success Stories</HoveredLink>
+              <HoveredLink href="/refer">Refer & Earn</HoveredLink>
+            </div>
+          </MenuItem>
+        )}
 
         {/* <DirectNavigate route={'/'} RouteName={'Review'} /> */}
         <DirectNavigate route={'/contact-us'} RouteName={'Contact'} />

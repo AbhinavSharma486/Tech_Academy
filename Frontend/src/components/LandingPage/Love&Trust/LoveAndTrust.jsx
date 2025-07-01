@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import qi from "/src/assets/qi.jpg"; // Update path as needed
+import qi from "/src/assets/qi.jpg";
 
 const stats = [
   { value: "50.3K+", label: "Followers" },
@@ -20,7 +20,6 @@ export const LoveAndTrust = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Generate 5 indexes in circular fashion
   const getIndexes = () => {
     const len = stats.length;
     return [
@@ -33,20 +32,20 @@ export const LoveAndTrust = () => {
   };
 
   return (
-    <div className="w-full bg-gradient-to-r from-[#0B1E5B] to-[#0F3BAA] py-16 px-4 flex flex-col items-center">
+    <div className="w-full bg-gradient-to-b from-sky-900 to-sky-700  py-16 px-4 flex flex-col items-center">
 
       {/* Heading */}
-     <div className="text-center mb-12">
-  <div className="inline-block">
-    <h2 className="text-4xl md:text-5xl font-bold text-white inline-block">
-      <span className="bg-white text-[#071952] px-5 py-1 rounded-md shadow">
-        Love
-      </span>{" "}
-      And Trust
-    </h2>
-    <div className="h-[4px] w-full mt-4 rounded-full bg-gradient-to-r from-transparent via-white to-transparent" />
-  </div>
-</div>
+      <div className="text-center mb-12">
+        <div className="inline-block">
+          <h2 className="text-4xl md:text-5xl font-bold text-white inline-block">
+            <span className="bg-white text-[#071952] px-5 py-1 rounded-md shadow">
+              Love
+            </span>{" "}
+            And Trust
+          </h2>
+          <div className="h-[4px] w-full mt-4 rounded-full bg-gradient-to-r from-transparent via-white to-transparent" />
+        </div>
+      </div>
 
 
       {/* Main Layout */}
@@ -62,7 +61,7 @@ export const LoveAndTrust = () => {
           <p className="text-gray-700 text-sm mt-1">
             Bridging The Gap Between Education And Employment With Practical Skill Development.
           </p>
-          
+
         </div>
 
         {/* Glowy Boxes - Only visible from md screen and up */}
@@ -72,43 +71,39 @@ export const LoveAndTrust = () => {
             initial={{ y: 40 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="flex flex-col absolute top-0 left-0 w-full gap-4"
+            className="flex flex-col absolute top-0 left-0 w-full gap-4 overflow-hidden rounded-2xl"
           >
-         {getIndexes().map((i, idx) => {
-  const isMiddle = idx === 2;
+            {getIndexes().map((i, idx) => {
+              const isMiddle = idx === 2;
 
-  return (
-    <motion.div
-      key={i}
-      initial={{ height: 80 }}
-      animate={{
-        height: isMiddle ? 110 : 80,
-        scale: isMiddle ? 1.05 : 1,
-        opacity: isMiddle ? 1 : 0.4,
-      }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-      className={`bg-gradient-to-r from-[#1836a8] to-[#1649bf]
-        rounded-2xl shadow-lg text-white text-center 
-        backdrop-blur-md w-full px-4 flex items-center justify-center`}
-    >
-      {isMiddle && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          <div className="text-3xl font-bold">{stats[i].value}</div>
-          <div className="text-sm mt-1">{stats[i].label}</div>
-        </motion.div>
-      )}
-    </motion.div>
-  );
-})}
-
-
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ height: 80 }}
+                  animate={{
+                    height: isMiddle ? 110 : 80,
+                    scale: isMiddle ? 1.05 : 1,
+                    opacity: isMiddle ? 1 : 0.4,
+                  }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className={`bg-gradient-to-r from-[#facc15] to-[#fb923c rounded-2xl text-white text-center backdrop-blur-md w-full px-4 flex items-center justify-center shadow-xl`}
+                >
+                  {isMiddle && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <div className="text-3xl font-bold">{stats[i].value}</div>
+                      <div className="text-sm mt-1">{stats[i].label}</div>
+                    </motion.div>
+                  )}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </div>
     </div>
   );
-}
+};

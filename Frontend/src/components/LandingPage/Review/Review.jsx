@@ -1,43 +1,64 @@
 import React from "react";
-import { AnimatedTestimonials } from "../../ui/ReviewCard/Review";
+import { AnimatedTestimonials } from "./Review_a_ui";
+import one from '../../../assets/LandingPageImage/HeroImages/review_one.avif';
+import two from '../../../assets/LandingPageImage/HeroImages/review_two.jpg';
+import three from '../../../assets/LandingPageImage/HeroImages/review_three.jpg';
+import four from '../../../assets/LandingPageImage/HeroImages/review_four.jpg';
+import five from '../../../assets/LandingPageImage/HeroImages/review_five.jpg';
+import six from '../../../assets/LandingPageImage/HeroImages/review_six.jpg';
 
 export function Review() {
   const testimonials = [
     {
       quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "The attention to detail and innovative features have streamlined our operations. It’s exactly what our team needed.",
+      name: "Arjun Desai",
+      designation: "Product Manager at Zentech Solutions",
+      src: one,
     },
     {
       quote:
-        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      name: "Michael Rodriguez",
-      designation: "CTO at InnovateSphere",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "This platform has drastically improved our team's efficiency. The user-friendly interface is a major plus.",
+      name: "Rohan Mehta",
+      designation: "Operations Head at CloudVista India",
+      src: two,
     },
     {
       quote:
-        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-      name: "Emily Watson",
-      designation: "Operations Director at CloudScale",
-      src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "Exceptional support and powerful features. Rare to see such dedication in a SaaS platform.",
+      name: "Ananya Iyer",
+      designation: "Lead Engineer at DataNest",
+      src: three,
     },
     {
       quote:
-        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-      name: "James Kim",
-      designation: "Engineering Lead at DataPro",
-      src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "The performance and scalability have made it easier for us to scale our services across regions. Highly recommended.",
+      name: "Vikram Patel",
+      designation: "CTO at NexaByte Technologies",
+      src: four,
     },
     {
       quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Lisa Thompson",
-      designation: "VP of Technology at FutureNet",
-      src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "Easy to integrate and very reliable. We've seen a 30% improvement in our delivery timelines.",
+      name: "Sneha Reddy",
+      designation: "Customer Success Manager at Digitronix",
+      src: five,
+    },
+    {
+      quote:
+        "Among all the tools we've tried, this one truly delivers consistent results with great flexibility.",
+      name: "Priya Sharma",
+      designation: "Head of Innovation at InfiTech Labs",
+      src: six,
     },
   ];
-  return <AnimatedTestimonials testimonials={testimonials} />;
+  return (
+    <div>
+      <div className=" flex items-center justify-center " >
+        <span className="flex w-fit items-center justify-center mt-10 text-2xl bg-gradient-to-r from-blue-700 to-blue-500 text-white px-4 py-2 rounded-full font-semibold" >Review Section</span>
+      </div>
+      <AnimatedTestimonials testimonials={testimonials} />;
+    </div>
+  )
+
 }

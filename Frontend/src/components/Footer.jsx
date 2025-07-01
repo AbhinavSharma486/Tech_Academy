@@ -2,6 +2,7 @@ import React from "react";
 import { CiMail } from "react-icons/ci";
 import { FiLinkedin } from "react-icons/fi";
 import { IoLocationOutline, IoMail } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 
 const Footer = () => {
@@ -32,12 +33,45 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div className="">
-            <ul className="text-black text-center ">
+          <div>
+            <ul className="text-black text-center">
               <li className="sm:mb-3 mb-2 font-bold">CERTIFIED COURSES</li>
-              <li className="mb-1 lg:text-sm flex justify-center"><p className=" hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit">Full Stack Development with Gen AI</p></li>
-              <li className="mb-1 lg:text-sm flex justify-center"><p className=" hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit">Data Science & AI</p></li>
-              <li className="mb-1 lg:text-sm flex justify-center"><p className=" hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit">Data Analytics</p></li>
+
+              <li className="mb-1 lg:text-sm flex justify-center">
+                <Link
+                  to="/JavaFullStack"
+                  className="hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit"
+                >
+                  JAVA Full Stack
+                </Link>
+              </li>
+
+              <li className="mb-1 lg:text-sm flex justify-center">
+                <Link
+                  to="/mern-fullstack"
+                  className="hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit"
+                >
+                  MERN Full Stack
+                </Link>
+              </li>
+
+              <li className="mb-1 lg:text-sm flex justify-center">
+                <Link
+                  to="/data-analytics"
+                  className="hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit"
+                >
+                  Data Analytics
+                </Link>
+              </li>
+
+              <li className="mb-1 lg:text-sm flex justify-center">
+                <Link
+                  to="/data-science-ai"
+                  className="hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit"
+                >
+                  Data Science & AI
+                </Link>
+              </li>
             </ul>
           </div>
 

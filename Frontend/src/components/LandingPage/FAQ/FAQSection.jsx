@@ -5,6 +5,7 @@ import {
   LightBulbIcon,
   BriefcaseIcon,
 } from "@heroicons/react/24/outline";
+import { motion, AnimatePresence } from "framer-motion";
 
 const data = {
   Courses: [
@@ -94,6 +95,47 @@ const data = {
   ],
 };
 
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15, 
+      delayChildren: 0.1, 
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      when: "afterChildren",
+      staggerChildren: 0.1, 
+      staggerDirection: -1,
+      duration: 0.4, 
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: -50 }, 
+  visible: {
+    opacity: 1,
+    y: 0, 
+    transition: {
+      duration: 0.8, 
+      ease: "easeOut",
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -20, 
+    transition: {
+      duration: 0.5, 
+      ease: "easeIn",
+    },
+  },
+};
+
 const FAQSection = () => {
   const [activeTab, setActiveTab] = useState("Courses");
   const [openIndex, setOpenIndex] = useState(null);
@@ -103,7 +145,6 @@ const FAQSection = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Store icon components instead of JSX
   const iconMap = {
     Courses: BookOpenIcon,
     Learning: LightBulbIcon,
@@ -143,25 +184,25 @@ const FAQSection = () => {
         {tabs.map((tab) => {
           const Icon = iconMap[tab];
           return (
-            <button
+            <motion.button
               key={tab}
               onClick={() => {
                 setActiveTab(tab);
                 setOpenIndex(null);
               }}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center ${
-                activeTab === tab
-                  ? "bg-blue-500 text-white border-blue-600"
-                  : "bg-white text-gray-700 border-gray-300 hover:bg-blue-100"
-              }`}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border flex items-center ${activeTab === tab
+                ? "bg-blue-500 text-white border-blue-600"
+                : "bg-white text-gray-700 border-gray-300 hover:bg-blue-100"
+                }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Icon
-                className={`w-5 h-5 mr-2 ${
-                  activeTab === tab ? "text-white" : "text-gray-700"
-                }`}
+                className={`w-5 h-5 mr-2 ${activeTab === tab ? "text-white" : "text-gray-700"
+                  }`}
               />
               {tab}
-            </button>
+            </motion.button>
           );
         })}
       </div>
@@ -174,55 +215,65 @@ const FAQSection = () => {
             {tabs.map((tab) => {
               const Icon = iconMap[tab];
               return (
-                <button
+                <motion.button
                   key={tab}
                   onClick={() => {
                     setActiveTab(tab);
                     setOpenIndex(null);
                   }}
-                  className={`w-full flex items-center gap-2 text-left px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                    activeTab === tab
-                      ? "bg-blue-500 text-white shadow border-l-4 border-blue-700"
-                      : "bg-gray-50 text-gray-800 hover:bg-blue-100"
-                  }`}
+                  className={`w-full flex items-center gap-2 text-left px-4 py-2 rounded-lg font-medium transition-all duration-200 ${activeTab === tab
+                    ? "bg-blue-500 text-white shadow border-l-4 border-blue-700"
+                    : "bg-gray-50 text-gray-800 hover:bg-blue-100"
+                    }`}
+                  whileHover={{ x: 5 }}
                 >
                   <Icon
-                    className={`w-5 h-5 ${
-                      activeTab === tab ? "text-white" : "text-gray-700"
-                    }`}
+                    className={`w-5 h-5 ${activeTab === tab ? "text-white" : "text-gray-700"
+                      }`}
                   />
                   {tab}
-                </button>
+                </motion.button>
               );
             })}
           </div>
         </div>
 
         {/* FAQ Content */}
-        <div className="md:w-3/4 w-full">
-          <div className="flex items-center mb-6">
-            <div className="w-8 h-8 bg-blue-600 text-white flex items-center justify-center rounded-full mr-3">
-              {React.createElement(iconMap[activeTab], {
-                className: "w-4 h-4 text-white",
-              })}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={containerVariants}
+            className="md:w-3/4 w-full"
+          >
+            <div className="flex items-center mb-6">
+              <div className="w-8 h-8 bg-blue-600 text-white flex items-center justify-center rounded-full mr-3">
+                {React.createElement(iconMap[activeTab], {
+                  className: "w-4 h-4 text-white",
+                })}
+              </div>
+              <h2 className="text-2xl font-semibold text-gray-700">
+                {activeTab} FAQs
+              </h2>
             </div>
-            <h2 className="text-2xl font-semibold text-gray-700">
-              {activeTab} FAQs
-            </h2>
-          </div>
 
-          <div className="space-y-4">
-            {(data[activeTab] || []).map((item, index) => (
-              <FAQItem
-                key={index}
-                question={item.question}
-                answer={item.answer}
-                isOpen={openIndex === index}
-                onToggle={() => handleToggle(index)}
-              />
-            ))}
-          </div>
-        </div>
+
+            <div className="space-y-4">
+              {(data[activeTab] || []).map((item, index) => (
+                <FAQItem
+                  key={index}
+                  question={item.question}
+                  answer={item.answer}
+                  isOpen={openIndex === index}
+                  onToggle={() => handleToggle(index)}
+                  variants={itemVariants}
+                />
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
