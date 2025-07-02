@@ -11,6 +11,7 @@ import Java_FullStack from "./pages/Java_FullStack";
 import DataAnalyticsPage from "./pages/DataAnalytics";
 import SuccessStories from './components/SuccessStory/SuccessStories';
 import Mern_FullStack from "./pages/Mern_FullStack";
+import DataScienceAI from './pages/DataScienceAI';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/data-analytics" element={<DataAnalyticsPage />} />
           <Route path="/success_stories" element={<SuccessStories />} />
           <Route path="/mern-fullstack" element={<Mern_FullStack />} />
+          <Route path="/data-science-ai" element={<DataScienceAI />} />
         </Routes>
       </main>
       <Footer />

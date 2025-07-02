@@ -54,7 +54,7 @@ function Navbar({ className }) {
               <HoveredLink href="/JavaFullStack">Java Full Stack</HoveredLink>
               <HoveredLink href="/mern-fullstack">MERN Full Stack</HoveredLink>
               <HoveredLink href="/data-analytics">Data Analytics</HoveredLink>
-              <HoveredLink href="/datascience&ai">Data Scient & AI</HoveredLink>
+              <HoveredLink href="/data-science-ai">Data Scient & AI</HoveredLink>
             </div>
           </MenuItem>
         )}
