@@ -7,6 +7,6 @@ const DataScienceAI = () => {
     <div>
       < DSAI_LandingPage />
     </div>
-  )
-}
+  );
+};
 export default DataScienceAI;

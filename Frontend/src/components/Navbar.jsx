@@ -45,7 +45,7 @@ function Navbar({ className }) {
               { label: "Java Full Stack", href: "/JavaFullStack" },
               { label: "MERN Full Stack", href: "/mern-fullstack" },
               { label: "Data Analytics", href: "/data-analytics" },
-              { label: "Data Scient & AI", href: "/datascience&ai" },
+              { label: "Data Scient & AI", href: "/data-science-ai" },
             ]}
           />
         ) : (
