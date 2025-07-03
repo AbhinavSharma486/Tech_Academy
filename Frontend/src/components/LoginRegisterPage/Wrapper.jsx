@@ -8,7 +8,7 @@ function Wrapper({ children }) {
   const isRegister = location.pathname === "/register";
 
   return (
-    <div className="bg-gradient-to-br from-[#1e40af] via-[#60a5fa] to-[#f0f9ff] flex flex-col items-center justify-center min-h-screen pt-20 relative">
+    <div className="bg-gradient-to-br from-[#1e40af] via-[#60a5fa] to-[#f0f9ff] flex flex-col items-center md:justify-center min-h-screen pt-24 md:pt-20 relative">
       <div className="absolute top-[20%] right-[10%] z-0 md:block hidden animate-pulse duration-1000">
         <div className="w-[100px] h-[100px] bg-white/10 rounded-full blur-2xl absolute -top-5 -left-5"></div>
         <svg
