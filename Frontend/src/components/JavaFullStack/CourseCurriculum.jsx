@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Code, Database, Search, Users, Globe, Shield, Zap, BookOpen, Server, Layers, Download } from 'lucide-react';
 
 const CourseCurriculum = () => {
   const [selectedTrack, setSelectedTrack] = useState('JAVA');
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const javaCurriculum = [
     {
@@ -229,12 +237,24 @@ const CourseCurriculum = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <p className="text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wider mb-4 font-bold">
-            <span className="relative bg-gradient-to-r from-blue-800 via-blue-500 to-blue-900 bg-clip-text text-transparent">
-              COURSE CURRICULUM
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-800 via-blue-500 to-blue-900"></span>
-            </span>
-          </p>
+          <div className="relative inline-block">
+            <p 
+              ref={textRef}
+              className="text-2xl sm:text-3xl lg:text-3xl uppercase tracking-wider mb-3 font-bold"
+            >
+              <span className="relative bg-gradient-to-r from-blue-800 via-blue-500 to-blue-900 bg-clip-text text-transparent">
+                COURSE CURRICULUM
+              </span>
+            </p>
+            <div 
+              className="absolute bottom-0 bg-gradient-to-r from-blue-800 via-blue-500 to-blue-900"
+              style={{
+                width: '100%',
+                height: windowWidth <= 640 ? '2px' : windowWidth <= 1024 ? '3px' : '4px',
+                left: '0'
+              }}
+            />
+          </div>
           <h1 className="text-sxl sm:text-2xl lg:text-2xl font-semibold text-gray-800 mb-3">
             What Will You <span className="text-blue-600">Learn</span>
           </h1>

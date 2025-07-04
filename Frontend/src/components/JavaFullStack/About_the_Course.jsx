@@ -83,12 +83,23 @@ export default function FullStackPrograms() {
           .button-text {
             font-size: 0.85rem !important;
             font-weight: 600 !important;
+            white-space: nowrap !important;
           }
           .button-container {
             height: 40px !important;
           }
           .feature-item {
             margin-bottom: 12px !important;
+          }
+        }
+        @media (max-width: 320px) {
+          .button-text {
+            font-size: 0.8rem !important;
+            font-weight: 600 !important;
+            white-space: nowrap !important;
+          }
+          .card-buttons {
+            gap: 0.5rem !important;
           }
         }
         @media (min-width: 611px) and (max-width: 1024px) {
@@ -166,7 +177,7 @@ export default function FullStackPrograms() {
               Learn Full-Stack Web Development
             </p>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 px-4">
             <span className="relative bg-gradient-to-r from-blue-800 via-blue-500 to-blue-900 bg-clip-text text-transparent">
              Full Stack Programs
               <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-800 via-blue-500 to-blue-900"></span>
@@ -253,7 +264,7 @@ export default function FullStackPrograms() {
                   <span className="button-text text-sm">Brochure</span>
                   <Download className="w-4 h-4" />
                 </button>
-                <button className="button-container flex-1 bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center space-x-2 shadow-lg hover:bg-blue-700 transition-colors h-12">
+                <button className="button-container flex-1 bg-blue-600 text-white font-semibold py-3 px-2 rounded-lg flex items-center justify-center space-x-2 shadow-lg hover:bg-blue-700 transition-colors h-12">
                   <span className="button-text text-sm">Apply Now</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
