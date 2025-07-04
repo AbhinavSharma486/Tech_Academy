@@ -82,7 +82,15 @@ const Footer = () => {
               <li className="mb-1 lg:text-sm flex justify-center"><p className=" hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit">Become A Mentor</p></li>
               <li className="mb-1 lg:text-sm flex justify-center"><p className=" hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit">Careers</p></li>
               <li className="mb-1 lg:text-sm flex justify-center"><p className=" hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit">Terms & Conditions</p></li>
-              <li className="mb-1 lg:text-sm flex justify-center"><p className=" hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit">Privacy Policy</p></li>
+              
+              <li className="mb-1 lg:text-sm flex justify-center">
+                <Link
+                  to='/privacy-policy'
+                  className=" hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit">
+                  Privacy Policy
+                </Link>
+              </li>
+
               <li className="mb-1 lg:text-sm flex justify-center"><p className=" hover:text-blue-700 transition-transform duration-300 hover:translate-x-1 hover:scale-105 cursor-pointer w-fit">Cancellation/Refund Policy</p></li>
             </ul>
           </div>

@@ -12,6 +12,7 @@ import DataAnalyticsPage from "./pages/DataAnalytics";
 import SuccessStories from './components/SuccessStory/SuccessStories';
 import Mern_FullStack from "./pages/Mern_FullStack";
 import DataScienceAI from './pages/DataScienceAI';
+import Privacy_policy from "./pages/Privacy_policy";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/success_stories" element={<SuccessStories />} />
           <Route path="/mern-fullstack" element={<Mern_FullStack />} />
           <Route path="/data-science-ai" element={<DataScienceAI />} />
+          <Route path="/privacy-policy" element={<Privacy_policy />} />
         </Routes>
       </main>
       <Footer />
